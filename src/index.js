@@ -4,23 +4,12 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { IntlProvider } from 'react-intl';
-import Spanish from './languages/es-MX.json';
-import English from './languages/en-US.json';
-
-const local = navigator.language;
-
-let lang;
-if(local === "en-US"){
-  lang = English;
-}
-else{
-  lang= Spanish;
-}
+import Wrapper from './components/Wrapper';
 
 ReactDOM.render(
-  <IntlProvider locale= {local} messages={Spanish}>
+ <Wrapper>
     <App date={Date.now()}/>
-  </IntlProvider>,
+    </Wrapper>,
   document.getElementById('root')
 );
 

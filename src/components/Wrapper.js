@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { IntlProvider } from 'react-intl';
-import Spanish from './languages/es-MX.json';
-import English from './languages/en-US.json';
+import Spanish from '../languages/es-MX.json';
+import English from '../languages/en-US.json';
 
-const Context = React.createContext();
+export const Context = React.createContext();
 const local = navigator.language;
 
 let lang;
@@ -21,7 +21,7 @@ const Wrapper = (props) => {
 function selectLang(e){
     const newLocale = e.target.value;
     setLocale(newLocale);
-    if(newLocale ==="ex-MX"){
+    if(newLocale ==="es-MX"){
         setMessages(Spanish);
     }
     else{
